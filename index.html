@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>wyvern</title>
+    <style>
+      *, *::after, *::before {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+      #drag-area {
+        height: 20px;
+        z-index: 200;
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+      }
+      #app {
+        margin-top: 20px;
+        height: calc(100vh - 20px);
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <div id="drag-area"></div>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./dist/renderer.js')
+  </script>
+</html>
